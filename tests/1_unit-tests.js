@@ -65,7 +65,7 @@ suite('Unit Tests', function () {
         { b: 5, a: '1' },
         "The order of keys doesn't matter"
       )
-      assert.deepEqual(
+      assert.notDeepEqual(
         { a: [5, 6] },
         { a: [6, 5] },
         'The order of array elements does matter'
@@ -82,22 +82,22 @@ suite('Unit Tests', function () {
   suite('Comparisons', function () {
     // #8
     test('#isAbove, #isAtMost', function () {
-      assert.fail('hello'.length, 5)
-      assert.fail(1, 0)
-      assert.fail(Math.PI, 3)
-      assert.fail(1 - Math.random(), 1)
+      assert.isAtMost('hello'.length, 5)
+      assert.isAbove(1, 0)
+      assert.isAbove(Math.PI, 3)
+      assert.isAtMost(1 - Math.random(), 1)
     })
     // #9
     test('#isBelow, #isAtLeast', function () {
-      assert.fail('world'.length, 5)
-      assert.fail(2 * Math.random(), 0)
-      assert.fail(5 % 2, 2)
-      assert.fail(2 / 3, 1)
+      assert.isAtLeast('world'.length, 5)
+      assert.isAtLeast(2 * Math.random(), 0)
+      assert.isAtLeast(5 % 2, 2)
+      assert.isAtLeast(2 / 3, 1)
     })
     // #10
     test('#approximately', function () {
-      assert.fail(weirdNumbers(0.5), 1, 0)
-      assert.fail(weirdNumbers(0.2), 1, 0)
+      assert.approximately(weirdNumbers(0.5), 1, 0)
+      assert.approximately(weirdNumbers(0.2), 1, 0)
     })
   })
 
