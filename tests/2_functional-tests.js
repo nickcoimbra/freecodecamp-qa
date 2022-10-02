@@ -13,10 +13,10 @@ suite('Functional Tests', function () {
     test('Test GET /hello with no name', function (done) {
       chai
         .request(server)
-        .get('/hello?name=Nick')
+        .get('/hello')
         .end(function (err, res) {
           assert.equal(res.status, 200)
-          assert.equal(res.text, 'hello Nick')
+          assert.equal(res.text, 'hello Guest')
           done()
         })
     })
