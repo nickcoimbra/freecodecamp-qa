@@ -130,7 +130,7 @@ suite('Unit Tests', function () {
     // #13
     test('#isString, #isNotString', function () {
       assert.isNotString(Math.sin(Math.PI / 4), 'A float is not a string')
-      assert.isNotString(
+      assert.isString(
         process.env.PATH,
         'An env variable is a string (or undefined)'
       )
